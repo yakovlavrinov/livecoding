@@ -1,7 +1,8 @@
-// Напишите функцию reverseString, которая принимает строку и возвращает её перевернутую версию.
+// Напишите функцию reverseString,
+// которая принимает строку и возвращает её перевернутую версию.
 
 function reverseString(str) {
-    return [...str].reverse().join('')
+	return [...str].reverse().join('')
 }
 
-console.log(reverseString("JavaScript"))
+console.log(reverseString('JavaScript'))
