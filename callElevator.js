@@ -16,6 +16,11 @@ const callElevator = (floor, elevators) => {
 		if (minDiff > diff) {
 			minDiff = diff
 			closestElevator = elevator
+		} else if (diff === minDiff) {
+			if (elevator.floor > closestElevator.floor) {
+				console.log('Разница такая же -> выбираем тот, что выше этажом')
+				closestElevator = elevator
+			}
 		}
 	})
 
