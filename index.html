@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Paint vs Compositing</title>
+  <style>
+    body {
+      margin: 40px;
+      font-family: sans-serif;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      margin: 20px;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    .paint {
+      background-color: crimson;
+      transition: background-color 0.5s ease;
+    }
+
+    .composite {
+      background-color: seagreen;
+      will-change: transform; /* создаём compositing layer */
+      transition: transform 0.5s ease;
+    }
+
+    .animate .paint {
+      background-color: gold;
+    }
+
+    .animate .composite {
+      transform: translateX(100px);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Paint (background-color)</h2>
+  <div class="box paint"></div>
+
+  <h2>Composite only (transform)</h2>
+  <div class="box composite"></div>
+
+  <button onclick="document.body.classList.toggle('animate')">Toggle Animate</button>
+
+</body>
+</html>
